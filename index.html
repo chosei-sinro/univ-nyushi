@@ -66,8 +66,7 @@ tr:hover{
 </head>
 <body>
 
-<h1>高１・２用　大学コード検索</h1>
-<br>
+<h1>入試結果報告用　　大学コード検索</h1>
 <h3> 千葉県立長生高等学校　進路指導部</h3>
 <p>
 大学名・学部名・学科名・略称・コード番号を入力してください。複数語をスペースで区切るとAND検索になります。
@@ -107,7 +106,7 @@ async function loadCSV() {
         const startTime = performance.now();
 
         const response = await fetch(
-            "https://chosei-sinro.github.io/univ-search12/univcode12.csv"
+            "https://chosei-sinro.github.io/univ-nyushi/univcode-nyushi2027.csv"
         );
 
         if (!response.ok) {
