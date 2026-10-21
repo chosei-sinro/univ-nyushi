@@ -311,7 +311,8 @@ async function loadCSV(){
     }
 
     let csvText =
-        await response.text();
+    const startTime = performance.now();
+    await response.text();
 
     csvText = csvText.replace(/^\uFEFF/, "");
 
@@ -351,11 +352,13 @@ async function loadCSV(){
         });
     }
 
-    document
-        .getElementById("status")
-        .textContent =
-        `${data.length.toLocaleString()}件読込完了`;
-}
+    const elapsed =
+           ((performance.now() - startTime) / 1000)
+            .toFixed(2);
+
+    document.getElementById("status").textContent =
+            `${data.length.toLocaleString()}件読込完了 (${elapsed}秒)`;
+
 
 /* -------------------- */
 /* 検索 */
