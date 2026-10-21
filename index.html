@@ -128,7 +128,7 @@ function escapeHtml(text){
 
 async function loadTitles(){
 
-    const response = await fetch("titles.txt");
+    const response = await fetch("./titles.txt");
 
     if(!response.ok){
         throw new Error("titles.txt読込失敗");
